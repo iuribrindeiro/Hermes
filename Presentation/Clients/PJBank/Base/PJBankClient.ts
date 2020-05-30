@@ -1,6 +1,7 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosPromise } from 'axios';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import mongoose from 'mongoose';
 import { PJBankClientOptions } from './PJBankClientOptions';
-import { Accreditation } from "../../../Entities/PJBank/Accreditation";
+import { Accreditation } from "./Accreditation";
 import { CreateAccreditationDataModel } from "./CreateAccreditationDataModel";
 import { IPJBankClient } from "./IPJBankClient";
 import { AccreditationFailedException } from './AccreditationFailedException';
@@ -27,8 +28,8 @@ export abstract class PJBankClient implements IPJBankClient {
                 'telefone': accreditateData.PhoneNumber,
                 'email': accreditateData.Emails.join(';'),
             }, { headers: {} });
-    
-            return new Accreditation(result.data.credencial, result.data.chave);   
+
+            return new Accreditation(result.data.credencial, result.data.chave);
         } catch (error) {
             throw new AccreditationFailedException(error);
         }

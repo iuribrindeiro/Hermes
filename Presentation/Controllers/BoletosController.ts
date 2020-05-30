@@ -1,5 +1,0 @@
-export class BoletosController {
-    constructor() {
-        
-    }
-}
