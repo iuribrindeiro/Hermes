@@ -28,7 +28,7 @@
     "@types/mongoose": "^5.7.21",
     "awilix": "^4.2.6",
     "awilix-express": "^3.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.16",
     "uuid": "^8.1.0"
